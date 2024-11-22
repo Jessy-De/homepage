@@ -1,0 +1,498 @@
+/* Header styles */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(58, 58, 58);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.contact-info {
+  color: #333;
+}
+
+.user-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.user-actions span,
+.user-actions a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.user-actions a:hover {
+  text-decoration: underline;
+}
+
+#cart {
+  cursor: pointer;
+}
+
+.contact-info {
+  display: flex; /* Align items horizontally */
+  gap: 0.5rem; /* Add space between phone and email */
+  align-items: center; /* Align items vertically */
+  text-align: left; /* Ensure alignment to the left */
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #333;
+}
+
+.contact-info a:hover {
+  text-decoration: underline; /* Optional hover effect */
+}
+
+.top-bar {
+  display: flex; /* Align items horizontally */
+  gap: 1rem; /* Space between items */
+  align-items: center; /* Align items vertically */
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: white;
+  padding: 0 0.5rem; /* Add some padding */
+  border-right: 1px solid #ddd; /* Add a separator line */
+}
+
+.top-bar a:last-child {
+  border-right: none; /* Remove the line from the last item */
+}
+
+.top-bar a:hover {
+  color: #007bff; /* Optional: Change color on hover */
+}
+
+/* Base styles for the navbar */
+.navbar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #333;
+}
+
+.navbar > li {
+  position: relative; /* Required for dropdown positioning */
+}
+
+.navbar > li > a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  background-color: #333;
+}
+
+.navbar > li > a:hover {
+  background-color: #555;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%; /* Position it below the parent link */
+  left: 0;
+  display: none; /* Hidden by default */
+  background-color: #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 3; /* Ensure dropdown is above other content */
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #666;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block; /* Show the dropdown when hovering over the parent */
+}
+
+/* Dropdown arrow */
+.dropdown-arrow {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+/* Hero section styles */
+#hero {
+  position: relative;
+  z-index: 1;
+  height: 80vh; /* Adjust height to 70% of the viewport */
+  overflow: hidden; /* Hide overflow to ensure clean edges */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Carousel wrapper */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Carousel images container */
+.carousel-images {
+  display: flex; /* Arrange images in a row */
+  transition: transform 0.5s ease-in-out; /* Smooth slide animation */
+  width: 300%; /* Adjust based on the number of images */
+  height: 100%; /* Ensure it covers the hero section */
+}
+
+/* Individual images */
+.carousel-images img {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200%; /* Match the height of the carousel container */
+  width: 400%; /* Ensure full width */
+}
+
+/* Carousel buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Carousel content overlay */
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.carousel-content h2,
+.carousel-content p,
+.carousel-content a {
+  margin: 0.5rem 0;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* General Styling */
+.products-section {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 1200px;
+}
+
+.product-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow products to wrap properly */
+  gap: 1rem; /* Add gap between items */
+  margin-bottom: 2rem;
+}
+
+/* General Product Styling */
+.product {
+  position: relative; /* Create stacking context for dropdown */
+  text-align: center;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  flex: 1;
+  max-width: calc(33.33% - 1rem); /* Fit 3 products per row */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Dropdown (Add to Cart) - Appear directly on top of the product */
+.product-dropdown {
+  position: absolute;
+  top: 0; /* Position the dropdown directly on top of the product */
+  left: 50%;
+  transform: translateX(-50%); /* Center it horizontally */
+  display: none; /* Hidden by default */
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 10; /* Ensure it's above the product */
+  width: 100%; /* Make the dropdown match the product width */
+  box-sizing: border-box;
+}
+
+/* Show dropdown on hover */
+.product:hover .product-dropdown {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heart and buttons layout */
+.heart {
+  margin-top: 10px;
+  cursor: pointer;
+  color: gray;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.heart.active {
+  color: red; /* Turn red when active */
+}
+
+.product-dropdown button {
+  margin: 5px;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.product-dropdown button:hover {
+  background-color: #0056b3;
+}
+
+pre {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+span {
+  color: red;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333; /* Dark background */
+  color: white; /* White text */
+  padding: 2rem 1rem; /* Add padding to the footer */
+  text-align: center; /* Center align the text */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-info,
+.footer-social,
+.footer-links {
+  flex: 1;
+  min-width: 250px; /* Ensures it doesn't shrink too small */
+}
+
+.footer-info h3,
+.footer-social h3,
+.footer-links h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-info p,
+.footer-links ul,
+.footer-social ul {
+  margin: 0.5rem 0;
+}
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-social a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #007bff; /* Change to blue when hovered */
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  border-top: 1px solid #444; /* Add a top border to separate from content */
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    text-align: left;
+  }
+
+  .footer-info,
+  .footer-social,
+  .footer-links {
+    flex: none;
+    width: 100%;
+  }
+}
+
+body {
+  background-color: white;
+}
+
+/* Styles specific to the products page */
+#products-page .product-row {
+  display: flex;
+  flex-wrap: wrap; /* Ensure products wrap to the next row if needed */
+  gap: 10px; /* Reduced gap to ensure all fit in a row */
+  margin: 20px 0;
+  justify-content: space-between; /* Distribute products evenly */
+}
+
+#products-page .product {
+  flex: 0 1 23%; /* Adjusted width for four products per row, accounting for gaps */
+  max-width: 23%; /* Ensure the max-width matches the flex basis */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#products-page .product img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#products-page .product p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+#products-page .product span {
+  color: red;
+  font-weight: bold;
+}
+
+/* Hover Effects */
+#products-page .product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown styling */
+#products-page .product-dropdown {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#products-page .product:hover .product-dropdown {
+  display: flex;
+}
+
+/* Quantity controls */
+#products-page .quantity-controls button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#products-page .quantity-controls span {
+  padding: 0 10px;
+}
+
+#products-page .quantity-controls button:hover {
+  background-color: #0056b3;
+}
+
+/* Heart button */
+#products-page .heart {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: red;
+}
+
+/* Add to Cart button */
+#products-page .btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#products-page .btn:hover {
+  background-color: #218838;
+}
+
+p {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: larger;
+}
+h1 {
+  text-align: center;
+}
